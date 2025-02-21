@@ -14,9 +14,9 @@ Abre otra terminal para el segundo servidor:
 ```
     mvn exec:java
 ```
-Tiene que hacerse asi para el correcto funcionamiento, despues es accesible desde ````http://localhost:35000```
+Tiene que hacerse asi para el correcto funcionamiento, despues es accesible desde http://localhost:35000
 
-#Pruebas
+###Pruebas
 
 Todos los parametros van sin espacio para su correcto funcionamiento:
 1. Con un parametro:
