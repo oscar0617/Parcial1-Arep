@@ -53,15 +53,33 @@ public class HttpServerFacade {
 
     static String getHtml(){
         String outputLine = "<!DOCTYPE html>\n"
-         + "<html>\n"
-         + "<head>\n"
-         + "<meta charset=\"UTF-8\">\n"
-         + "<title>Title of the document</title>\n"
-         + "</head>\n"
-         + "<body>\n"
-         + "<h1>Mi propio mensaje</h1>\n"
-         + "</body>\n"
-         + "</html>\n";
+                            +"<html>\n"
+                            +"<head>\n"
+                            +"<meta charset=\"UTF-8\">\n"
+                            +"<title>Form Example</title>\n"
+                            +"</head>\n"
+                            +"<body>\n"
+                            +"<h1>Peticion del metodo o clase</h1>\n"
+                            +"<form action=\"/consulta\"> \n"
+                            +"<label for=\"name\">Input</label><br>\n"
+                            +"<input type=\"text\" id=\"name\" name=\"name\" value=\"John\"><br><br>\n"
+                            +"<input type=\"button\" value=\"Submit\" onclick=\"loadGetMsg()\">\n"
+                            +"</form>\n"
+                            +"<div id=\"getrespmsg\"></div>\n"
+                            +"<script>\n"
+                            +"function loadGetMsg() {\n"
+                            +"let nameVar = document.getElementById(\"name\").value;\n"
+                            +"const xhttp = new XMLHttpRequest();\n"
+                            +"xhttp.onload = function() {\n"
+                            +"document.getElementById(\"getrespmsg\").innerHTML =\n"
+                            +"this.responseText;\n"
+                            +"}\n"
+                            +"xhttp.open(\"GET\", \"/consulta?comando=\"+nameVar);\n"
+                            +"xhttp.send();\n"
+                            +"}\n"
+                            +"</script>\n"
+                            +"</body>\n"
+                            +"</html>\n";
         return outputLine;
     }
 }
